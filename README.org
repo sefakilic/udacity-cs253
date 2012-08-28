@@ -1,0 +1,4 @@
+#+TITLE: CS253 - Web Application Engineering
+
+This repository contains source code for the project of building a blog through
+[[www.udacity.com][Udacity]]'s CS253 course.
