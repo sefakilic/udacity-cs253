@@ -6,4 +6,8 @@ This repository contains source code for the project of building a blog through
 Assignments throughout the course:
 - helloworld: http://cs253-sefa.appspot.com/
 - rot13: http://cs253-sefa.appspot.com/rot13
+<<<<<<< HEAD
 - usersignup: http://cs253-sefa.appspot.com/usersignup
+=======
+- usersignup: http://cs253-sefa.appspot.com/
+>>>>>>> b59c3410c3239d38c81cb12f0a8b71b7d55269cb
