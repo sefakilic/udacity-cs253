@@ -10,10 +10,11 @@ USER_RE = re.compile(r"^[a-zA-Z0-9_-]{3,20}$")
 PASSWORD_RE = re.compile(r"^.{3,20}$")
 EMAIL_RE = re.compile(r"^[\S]+@[\S]+\.[\S]+$")
 
-class UserSignup(webapp2.RequestHandler):    
+class UserSignup(webapp2.RequestHandler):
     def get(self):
-        self.render("signup.html")
-        
+        template = jinja_environment.get_template("signup.html")
+        self.response.out.write(template.render())
+
     def post(self):
         username = self.request.get("username")
         password = self.request.get("password")
