@@ -2,3 +2,8 @@
 
 This repository contains source code for the project of building a blog through
 [[www.udacity.com][Udacity]]'s CS253 course.
+
+Assignments throughout the course:
+- helloworld: http://cs253-sefa.appspot.com/
+- rot13: http://cs253-sefa.appspot.com/rot13
+- usersignup: http://cs253-sefa.appspot.com/
