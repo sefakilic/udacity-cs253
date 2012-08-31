@@ -3,8 +3,10 @@ import jinja2
 import os
 import re
 
+template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+    loader=jinja2.FileSystemLoader(template_dir),
+    autoescape=True)
 
 USER_RE = re.compile(r"^[a-zA-Z0-9_-]{3,20}$")
 PASSWORD_RE = re.compile(r"^.{3,20}$")
@@ -32,7 +34,7 @@ class UserSignup(webapp2.RequestHandler):
         elif not self.valid_verify(password, verify):
             # if password is valid, check if password and verify match.
             errors["invalid_verify"] = "Your passwords didn't match."
-        # verify email
+        # verify  email
         if email and not self.valid_email(email):
             errors["invalid_email"] = "That's not a valid email."
 

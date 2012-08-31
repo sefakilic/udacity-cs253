@@ -1,0 +1,19 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+  <h1>CS253 Blog</h1>
+
+{% for p in blog_posts %}
+<div class="post">
+  <div class="title">{{ p.subject }}</div>
+  <div class="date">{{ p.created.strftime("%b %d, %Y") }}</div>
+  <hr/>
+  
+  <div class="content">{{ p.content }}</div>
+</div>
+{% endfor %}
+</body>
+</html>

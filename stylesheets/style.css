@@ -1,0 +1,26 @@
+*{
+    font-family: Ubuntu;
+    font-size: 16px;
+}
+h1{
+    text-align: center;
+    font-size: 25px;
+}
+.post {
+    width: 600px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.post .title {
+    color: black;
+    display: inline-block;
+}
+
+.post .content {
+    color: gray;
+}
+
+.post .date{
+    float: right;
+}
