@@ -46,4 +46,4 @@ class NewPost(BasicHandler):
             b = BlogPost(subject=subject, content=content)
             b.put()
             self.redirect("/blog?id=%s" % b.key().id())
-        
+            

@@ -1,6 +1,6 @@
 import webapp2
 import rot13
-import usersignup
+import signup
 import blog
 
 class MainPage(webapp2.RequestHandler):
@@ -10,8 +10,10 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([("/", MainPage),
                                ("/rot13", rot13.Rot13),
-                               ("/usersignup", usersignup.UserSignup),
-                               ("/welcome", usersignup.Welcome),
+                               ("/signup", signup.Signup),
+                               ("/login", signup.Login),
+                               ("/logout", signup.Logout),
+                               ("/welcome", signup.Welcome),
                                ("/blog", blog.Blog),
                                ("/blog/newpost", blog.NewPost)],
                               debug=True)
