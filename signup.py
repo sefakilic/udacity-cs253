@@ -45,7 +45,8 @@ def valid_pw(pw, h):
 def set_cookie(handler, name, value):
     handler.response.headers.add_header("Set-Cookie", "%s=%s; Path=/" %
                                         (str(name), str(value)))
-    
+
+# user model
 class User(db.Model):
     username = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
@@ -56,7 +57,8 @@ def add_user(username, **kw):
 
 def get_user(username):
     return User.get_by_key_name(username)
-    
+
+# signup Handler
 class Signup(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("signup.html")
@@ -109,7 +111,7 @@ class Signup(webapp2.RequestHandler):
     def valid_email(self, email):
         return EMAIL_RE.match(email)
 
-
+# login handler
 class Login(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("login.html")
@@ -135,7 +137,7 @@ class Logout(webapp2.RequestHandler):
         set_cookie(self, "username", "")  # clear cookie
         self.redirect("/signup")
 
-    
+# welcome page handler
 class Welcome(webapp2.RequestHandler):
     def get(self):
         c = self.request.cookies.get("username")
