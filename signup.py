@@ -96,7 +96,7 @@ class Signup(webapp2.RequestHandler):
         else:
             add_user(username=username, password=make_pw_hash(password))
             set_cookie(self, "username", make_secure_val(username))
-            self.redirect("/welcome")
+            self.redirect("/blog/welcome")
         
     def valid_username(self, username):
         return USER_RE.match(username)
@@ -125,7 +125,7 @@ class Login(webapp2.RequestHandler):
         u = get_user(username)
         if u and valid_pw(password, u.password):
             set_cookie(self, username, make_secure_val(username))
-            self.redirect("/welcome")
+            self.redirect("/blog/welcome")
         else:
             error = "Invalid login"
             template_values = {"error": error}
@@ -135,7 +135,7 @@ class Login(webapp2.RequestHandler):
 class Logout(webapp2.RequestHandler):
     def get(self):
         set_cookie(self, "username", "")  # clear cookie
-        self.redirect("/signup")
+        self.redirect("/blog/signup")
 
 # welcome page handler
 class Welcome(webapp2.RequestHandler):
@@ -147,5 +147,5 @@ class Welcome(webapp2.RequestHandler):
             template = jinja_environment.get_template("welcome.html")
             self.response.out.write(template.render(template_values))
         else:
-            self.redirect("/signup")
+            self.redirect("/blog/signup")
         

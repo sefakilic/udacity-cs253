@@ -10,11 +10,15 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([("/", MainPage),
                                ("/rot13", rot13.Rot13),
-                               ("/signup", signup.Signup),
-                               ("/login", signup.Login),
-                               ("/logout", signup.Logout),
-                               ("/welcome", signup.Welcome),
+                               ("/blog/signup", signup.Signup),
+                               ("/blog/login", signup.Login),
+                               ("/blog/logout", signup.Logout),
+                               ("/blog/welcome", signup.Welcome),
                                ("/blog", blog.Blog),
-                               ("/blog/newpost", blog.NewPost)],
+                               ("/blog/([0-9]+)", blog.Post),
+                               ("/blog/newpost", blog.NewPost),
+                              #json
+                               (("/blog/.json"), blog.BlogJSON),
+                               (("/blog/([0-9]+).json"), blog.PostJSON)],
                               debug=True)
 
