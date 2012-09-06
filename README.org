@@ -8,8 +8,13 @@ Assignments throughout the course:
 - rot13: http://cs253-sefa.appspot.com/rot13
 - blog: http://cs253-sefa.appspot.com/blog
 - blog-newpost: http://cs253-sefa.appspot.com/blog/newpost
-- signup: http://cs253-sefa.appspot.com/signup
-- login: http://cs253-sefa.appspot.com/login
-- logout: http://cs253-sefa.appspot.com/logout
+- signup: http://cs253-sefa.appspot.com/blog/signup
+- login: http://cs253-sefa.appspot.com/blog/login
+- logout: http://cs253-sefa.appspot.com/blog/logout
+
+JSON support
+- for all posts: http://cs253-sefa.appspot.com/blog/.json
+- any post: http://cs253-sefa.appspot.com/blog/(post_id).json
+
 
 
