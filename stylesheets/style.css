@@ -24,3 +24,11 @@ h1{
 .post .date{
     float: right;
 }
+
+#queried {
+    width: 600px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+}

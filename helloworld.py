@@ -19,6 +19,7 @@ app = webapp2.WSGIApplication([("/?", MainPage),
                                ("/blog/newpost/?", blog.NewPost),
                               #json
                                (("/blog/.json"), blog.BlogJSON),
-                               (("/blog/([0-9]+).json"), blog.PostJSON)],
+                               (("/blog/([0-9]+).json"), blog.PostJSON),
+                               ("/blog/flush/?", blog.FlushCache)],
                               debug=True)
 
